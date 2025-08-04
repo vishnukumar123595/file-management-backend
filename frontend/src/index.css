@@ -1,0 +1,424 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Root Font and Color Setup */
+:root {
+  --font-base: 'Roboto', sans-serif;
+  --color-bg: #f9f9f9;
+  --color-bgdark: rgb(57, 56, 56);
+  --color-text: #1a1a1a;
+  --color-primary: #1976d2; /* Matches MUI default primary */
+  --color-secondary: #dc004e;
+
+  --transition-default: 0.3s ease-in-out;
+}
+
+body.light {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-secondary: #007bff;
+  --sidebar-bg: #ffffff;
+  --navbar-bg: #ffffff;
+}
+
+body.dark {
+  --color-bg: #1a1a1a;
+  --color-text: #f1f1f1;
+  --color-secondary: #2196f3;
+  --sidebar-bg: #2c2c2c;
+  --navbar-bg: #2c2c2c;
+}
+
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+}
+
+/* 5. Link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 6. Scrollbar (Optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* Page background dark */
+.login-page {
+  background-color: #121212;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+/* Inner container */
+.login-container {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+/* Centered heading */
+.login-title {
+  color: #ffffff;
+  font-weight: bold !important;
+  font-size: 1.9rem !important;
+  text-transform: uppercase;
+}
+.login-subtitle {
+  color: #b0b0b0;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  letter-spacing: 6px !important;
+}
+.login-welcome-back {
+  color: #ffffff;
+  font-weight: bold !important;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.login-input-container {
+  margin-top: 1rem;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+.custom-label .MuiInputLabel-root {
+  color: #cdc9c9;
+}
+.custom-label .Mui-focused {
+  color: #cdc9c9
+}
+.custom-label .Mui-error {
+  color: #d32f2f;
+}
+
+.login-button {
+  background-color: #e53935 !important;
+  color: white;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+
+.login-button:hover {
+  background-color: #d32f2f !important;
+}
+
+
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: var(--sidebar-bg);
+  color: var(--color-text);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .sidebar-header {
+  display: none;
+}
+
+.sidebar .sidebar-item {
+  padding: 1rem;
+  text-align: left;
+  border-radius: 4px;
+  background-color: #555;
+  color: black;
+  cursor: pointer;
+  transition: var(--transition-default);
+}
+
+.sidebar .sidebar-item.active {
+  background-color: red;
+  color: #fff;
+}
+
+.logo-text{
+  font-size: 1.5rem;
+  font-weight: bold !important;
+  color: darken(#fff, 10%) !important;
+}
+
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  /* border-bottom: 1px solid #ccc; */
+  /* background-color: #fff; */
+  background-color: var(--navbar-bg);
+  color: var(--color-text);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-btn {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+
+
+
+.folder-section {
+  padding: 2rem;
+}
+
+.folder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.folder-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  gap: 1.2rem;
+}
+
+
+
+.folder-card {
+  background-color: darken(#fff, 10%) !important;
+  max-width: 300px;
+  width: 100%;
+  border: 1px solid gray;
+  height: 170px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.folder-card .delete-icon-button {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+}
+.folder-card .delete-icon-button:hover{
+  font-size: 1rem !important;
+}
+
+
+
+.folder-text {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.folder-card:hover {
+  transform: translateY(-5px);
+  border-color: 1px solid var(--color-primary);
+}
+
+.folder-icon {
+  font-size: 5rem !important;
+  margin-bottom: 0.5rem;
+  color: grey;
+}
+
+.folder-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #fff;
+}
+
+
+
+
+
+.file-card {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.file-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.file-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: none;
+  gap: 8px;
+}
+
+.file-card:hover .file-actions {
+  display: flex;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.icon:hover {
+  color: #d32f2f; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  /* .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+  } */
+   .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--sidebar-bg);
+  transform: translateX(-100%);
+  color: var(--color-text);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+  .sidebar.open {
+    transform: translateX(0);
+    background: var(--sidebar-bg);
+  }
+
+  .sidebar .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .menu-btn {
+    display: inline-block;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: bold !important;
+    color: darken(#fff, 10%) !important;
+  }
+  
+}
+
